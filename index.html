@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>デジタル干支時計</title>
+    <script src="clock.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+  </head>
+  <body>
+    <header><h1>デジタル干支時計<h1></header>
+    <p id="clock"></p><button onclick="share();">今の時刻をツイート</button>
+    <h2>説明</h2>
+    <p>時:分:秒表示で、時を午前・午後+十二支で、分・秒を干支で表示します。</p>
+    <h2>読み方</h2>
+    <p>分・秒を10と12で割った余りがそれぞれ十干(0から順に<code id="gan_str"></code>)、十二支(0から順に<code id="zhi_str"></code>)に対応しています。</p>
+  </body>
+</html>
