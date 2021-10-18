@@ -29,4 +29,29 @@ window.onload = function() {
   }, 10);
   document.getElementById("gan_str").textContent = gan;
   document.getElementById("zhi_str").textContent = zhi;
+  let inner = "<tr><td></td>";
+  for (let col = 0; col < 12; col++) {
+    inner += `<th scope="col">${zhi[col]}</th>`;
+  }
+  inner += "</tr>";
+  let answer = new Array(120);
+  for (let i = 0; i < 60; ++i) {
+    let col = i % 12;
+    let row = i % 10;
+    let index = row * 12 + col;
+    answer[index] = mod60_to_ganzhi(i) + `=${i}`;
+  }
+  for (let row = 0; row < 10; row++) {
+    inner += `<tr><th scope="row">${gan[row]}</th>`;
+    for (let col = 0; col < 12; col++) {
+      if ((row + col) % 2 == 0) {
+        let index = row * 12 + col;
+        inner += `<td>${answer[index]}</td>`;
+      } else {
+        inner += "<td></td>";
+      }
+    }
+    inner += "</tr>";
+  }
+  document.getElementById("ganzhi-table").innerHTML = inner;
 }
